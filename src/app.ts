@@ -1,16 +1,16 @@
-import { Hono } from "hono";
-import { cors } from "hono/cors";
-import { compress } from "hono/compress";
+import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+import { compress } from 'hono/compress'
 
 export function createApp() {
-  const app = new Hono();
+  const app = new Hono()
 
   // Middleware
-  app.use(compress());
-  app.use("*", cors());
+  app.use(compress())
+  app.use('*', cors())
 
   // Routes
-  app.get("/", (c) => c.text("Hono!"));
+  app.get('/', (c) => c.text('Hono!'))
 
-  return app;
+  return app
 }
